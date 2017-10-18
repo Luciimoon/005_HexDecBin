@@ -23,6 +23,12 @@ public class HexDecBin {
 	String convert = "";
 	String inputnum = "";
 	
+	
+	int numberBits = 10;
+	int bite = 8; //spelled wrong to avoid a keyword conflict
+	int nibble = 4;
+	int byteAnswer = 0, byteRemainder = 0;
+	
 	public HexDecBin() {
 		System.out.println("welcome to my hexadecimal, Decimal, or Binary conversion program! ");
 		System.out.println("What is your name?");
@@ -32,6 +38,8 @@ public class HexDecBin {
 
 	public void setHexNumber() {
 
+		
+		
 		// msg = "Please enter your string";
 		// wordPut = JOptionPane.showInputDialog(null, msg);
 		System.out.println("\nWhat is your starting base. Hex, Dec, or Bin?");
@@ -52,13 +60,20 @@ public class HexDecBin {
 		if (base == "hex")
 			Integer.parseInt(inputnum, 16);
 		
-		// System.out.println("\nEnter the hex number :");
-		// hex = kbd.nextLine();
-		// mouse over parseInt to read pop-up guide
-		// num = Integer.parseInt(hex, 16);
-		// System.out.println("You have entered hex " + hex );
-		// System.out.println("Decimal value is: " + num + "(remember 0-" +num + " has
-		// "+ (num+1) + " values)");
+		
+		
+		
+		 System.out.println("\nEnter the hex number :");
+		 hex = kbd.nextLine();
+	     //mouse over parseInt to read pop-up guide
+		 num = Integer.parseInt(hex, 16);
+		 System.out.println("You have entered hex " + hex );
+		 System.out.println("Decimal value is: " + num + "(remember 0-" +num + " has " +(num+1) + " values)\"");
+		 
+		 
+		 
+		 byteAnswer = numberBits / bite;
+			byteRemainder = numberBits % bite;
 
 	}// end of setHexNumber
 
@@ -66,10 +81,10 @@ public class HexDecBin {
 		
 		String binary = Integer.toBinaryString(num);
 		System.out.println("Your answer is:" + inputnum);
-		//System.out.println("binary value is: " + binary);
-		//System.out.println("Number of bits is " + binary.length());
-		//System.out.println("Number of whole nibbles (4 bits) is x" + " with y bits over left");
-		//System.out.println("Number of whole bytes (8bits) is x" + " with y bits remaining");
+		System.out.println("binary value is: " + binary);
+		System.out.println("Number of bits is " + binary.length());
+		System.out.println("Number of whole nibbles (4 bits) is "+ bite/4 +  " with y bits over left");
+		System.out.println("Number of whole bytes (8bits) is "+ byteAnswer + " with "+ byteRemainder +" bits remaining");
 	}
 	
 }// end of class
