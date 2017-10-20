@@ -50,25 +50,56 @@ public class HexDecBin {
 		inputnum = kbd.nextLine();
 		inputint = Integer.parseInt(inputnum);
 
-		if (base == "dec") {
-			if (convert == "hex") {
+		
+		//test syso's
+		System.out.println(base);
+		System.out.println(convert);
+		System.out.println(inputnum);
+		System.out.println(inputint);
+
+		
+		if (base.equalsIgnoreCase("dec")) {
+			if (convert.equalsIgnoreCase("hex")) {
 				inputnum = Integer.toString(inputint, 16); // decimal to Hex
-				System.out.println("Your answer is:" + inputint);
-			} else if (convert == "bin")
-				Integer.toString(inputint, 2); // decimal to binary
+				System.out.println("Your answer is:" + inputnum);
+			} else if (convert.equalsIgnoreCase("bin"))
+				inputnum = Integer.toString(inputint, 2); // decimal to binary
+				System.out.println("Your answer is:" + inputnum);
+		  
+			
 		}
-		if (base == "hex")
-			Integer.parseInt(inputnum, 16);
 		
 		
 		
+		if (base.equalsIgnoreCase("hex"))
+			if (convert.equalsIgnoreCase("dec")) {
+			
+				inputnum = Integer.toString(inputint, 10); // decimal to Hex
+				System.out.println("Your answer is:" + inputnum);
+			} else if (convert.equalsIgnoreCase("bin"))
+				inputnum = Integer.toString(inputint, 2); // decimal to binary
+				System.out.println("Your answer is:" + inputnum);
 		
-		 System.out.println("\nEnter the hex number :");
-		 hex = kbd.nextLine();
+				
+				
+				
+			if (base.equalsIgnoreCase("bin"))
+				if (convert.equalsIgnoreCase("dec")) {
+					inputnum = Integer.toString(inputint, 10); // decimal to Hex
+					System.out.println("Your answer is:" + inputnum);
+				} else if (convert.equalsIgnoreCase("hex"))
+					inputnum = Integer.toString(inputint, 2); // decimal to binary
+					System.out.println("Your answer is:" + inputnum);
+		
+		
+		
+		// System.out.println("\nEnter the hex number :");
+		 //hex = kbd.nextLine();
 	     //mouse over parseInt to read pop-up guide
-		 num = Integer.parseInt(hex, 16);
-		 System.out.println("You have entered hex " + hex );
-		 System.out.println("Decimal value is: " + num + "(remember 0-" +num + " has " +(num+1) + " values)\"");
+		 //num = Integer.parseInt(hex, 16);
+					//HEX TO DEC
+		 //System.out.println("You have entered hex " + hex );
+		 //System.out.println("Decimal value is: " + num + "(remember 0-" +num + " has " +(num+1) + " values)\"");
 		 
 		 
 		 
