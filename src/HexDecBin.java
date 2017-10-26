@@ -48,32 +48,32 @@ public class HexDecBin {
 		convert = kbd.nextLine();
 		System.out.println("\nWhat is your input number?");
 		inputnum = kbd.nextLine();
-		inputint = Integer.parseInt(inputnum);
+		//inputint = Integer.parseInt(inputnum);
 
 		
-		//test syso's
-		System.out.println(base);
-		System.out.println(convert);
-		System.out.println(inputnum);
-		System.out.println(inputint);
+		
 
 		
 		if (base.equalsIgnoreCase("dec")) {
+			inputint = Integer.parseInt(inputnum);
 			if (convert.equalsIgnoreCase("hex")) {
 				inputnum = Integer.toString(inputint, 16); // decimal to Hex
 				System.out.println("Your answer is:" + inputnum);
 			} else if (convert.equalsIgnoreCase("bin"))
 				inputnum = Integer.toString(inputint, 2); // decimal to binary
 				System.out.println("Your answer is:" + inputnum);
-		  
-			
 		}
 		
 		
 		
 		if (base.equalsIgnoreCase("hex"))
 			if (convert.equalsIgnoreCase("dec")) {
-			
+				 System.out.println("\nEnter the hex number :");
+				 hex = kbd.nextLine();
+			     //mouse over parseInt to read pop-up guide
+				 num = Integer.parseInt(hex, 16);
+				 System.out.println("You have entered hex " + hex );
+				 System.out.println("Decimal value is: " + num + "(remember 0-" +num + " has " +(num+1) + " values)\"");
 				inputnum = Integer.toString(inputint, 10); // decimal to Hex
 				System.out.println("Your answer is:" + inputnum);
 			} else if (convert.equalsIgnoreCase("bin"))
@@ -84,11 +84,12 @@ public class HexDecBin {
 				
 				
 			if (base.equalsIgnoreCase("bin"))
+				inputint = Integer.parseInt(inputnum);
 				if (convert.equalsIgnoreCase("dec")) {
-					inputnum = Integer.toString(inputint, 10); // decimal to Hex
+					inputnum = Integer.toString(inputint, 2); // bin to dec
 					System.out.println("Your answer is:" + inputnum);
 				} else if (convert.equalsIgnoreCase("hex"))
-					inputnum = Integer.toString(inputint, 2); // decimal to binary
+					inputnum = Integer.toString(inputint, 16); // bin to hex
 					System.out.println("Your answer is:" + inputnum);
 		
 		
@@ -111,7 +112,7 @@ public class HexDecBin {
 	void convert() {
 		
 		String binary = Integer.toBinaryString(num);
-		System.out.println("Your answer is:" + inputnum);
+		//System.out.println("Your answer is:" + inputnum);
 		System.out.println("binary value is: " + binary);
 		System.out.println("Number of bits is " + binary.length());
 		System.out.println("Number of whole nibbles (4 bits) is "+ bite/4 +  " with y bits over left");
